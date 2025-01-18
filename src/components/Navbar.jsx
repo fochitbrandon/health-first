@@ -1,6 +1,7 @@
+import React from "react";
 import { useState } from "react";
 import { assets } from "../assets/assets";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink , useNavigate } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate();
 
@@ -41,13 +42,13 @@ const Navbar = () => {
                   onClick={() => navigate("my-profile")}
                   className="hover:text-black cursor-pointer"
                 >
-                  My profile
+                  Myprofile
                 </p>
                 <p
                   onClick={() => navigate("my-appointments")}
                   className="hover:text-black cursor-pointer"
                 >
-                  My appointmrents
+                  Myappointmrents
                 </p>
                 <p
                   onClick={() => setToken(false)}
