@@ -5,7 +5,7 @@ import group_profiles from "./group_profiles.png";
 import profile_pic from "./profile_pic.png";
 import Contact_image from "./contact_image.png";
 import about_image from "./about_image.png";
-import logo from "./logo.svg";
+import logo from "./logo.png";
 import dropdown_icon from "./dropdown_icon.svg";
 import menu_icon from "./menu_icon.svg";
 import cross_icon from "./cross_icon.png";
@@ -88,8 +88,9 @@ export const specialityData = [
 export const doctors = [
   {
     _id: "doc1  ",
+    image:doc1,
     name: "Dr.Richard James",
-    spaciality: "General_physician",
+    speciality: "General_physician",
     degree: "MBBS",
     experience: "4 years",
     about:
@@ -102,8 +103,9 @@ export const doctors = [
   },
   {
     _id: "doc2  ",
+    image:doc2,
     name: "Dr.Emily Larson",
-    spaciality: "Gynecologist",
+    speciality: "Gynecologist",
     degree: "MBBS",
     experience: "3 years",
     about:
@@ -115,9 +117,10 @@ export const doctors = [
     },
   },
   {
-    _id: "doc3  ",
+    _id: "doc3",
+    image:doc3,
     name: "Dr.Sarah Patel",
-    spaciality: "Germatologist",
+    speciality: "Germatologist",
     degree: "MBBS",
     experience: "1 years",
     about:
@@ -130,8 +133,9 @@ export const doctors = [
   },
   {
     _id: "doc4  ",
+    image:doc4,
     name: "Dr.Richard James",
-    spaciality: "General_physician",
+    speciality: "General_physician",
     degree: "MBBS",
     experience: "4 years",
     about:
@@ -144,8 +148,9 @@ export const doctors = [
   },
   {
     _id: "doc5  ",
+    image:doc5,
     name: "Dr.Richard James",
-    spaciality: "General_physician",
+    speciality: "General_physician",
     degree: "MBBS",
     experience: "4 years",
     about:
@@ -158,8 +163,9 @@ export const doctors = [
   },
   {
     _id: "doc6  ",
+    image:doc6,
     name: "Dr.Emily Larson",
-    spaciality: "Gynecologist",
+    speciality: "Gynecologist",
     degree: "MBBS",
     experience: "3 years",
     about:
@@ -172,8 +178,9 @@ export const doctors = [
   },
   {
     _id: "doc7  ",
+    image:doc7,
     name: "Dr.Sarah Patel",
-    spaciality: "Germatologist",
+    speciality: "Germatologist",
     degree: "MBBS",
     experience: "1 years",
     about:
@@ -186,8 +193,9 @@ export const doctors = [
   },
   {
     _id: "doc8  ",
+    image:doc8,
     name: "Dr.Richard James",
-    spaciality: "General_physician",
+    speciality: "General_physician",
     degree: "MBBS",
     experience: "4 years",
     about:
@@ -200,8 +208,9 @@ export const doctors = [
   },
   {
     _id: "doc9  ",
+    image:doc9,
     name: "Dr.Richard James",
-    spaciality: "General_physician",
+    speciality: "General_physician",
     degree: "MBBS",
     experience: "4 years",
     about:
@@ -214,8 +223,9 @@ export const doctors = [
   },
   {
     _id: "doc10 ",
+    image:doc10,
     name: "Dr.Emily Larson",
-    spaciality: "Gynecologist",
+    speciality: "Gynecologist",
     degree: "MBBS",
     experience: "3 years",
     about:
@@ -228,8 +238,9 @@ export const doctors = [
   },
   {
     _id: "doc11 ",
+    image:doc11,
     name: "Dr.Sarah Patel",
-    spaciality: "Germatologist",
+    speciality: "Germatologist",
     degree: "MBBS",
     experience: "1 years",
     about:
@@ -242,8 +253,9 @@ export const doctors = [
   },
   {
     _id: "doc12 ",
+    image:doc12,
     name: "Dr.Richard James",
-    spaciality: "General_physician",
+    speciality: "General_physician",
     degree: "MBBS",
     experience: "4 years",
     about:
@@ -256,8 +268,9 @@ export const doctors = [
   },
   {
     _id: "doc13 ",
+    image:doc13,
     name: "Dr.Emily Larson",
-    spaciality: "Gynecologist",
+    speciality: "Gynecologist",
     degree: "MBBS",
     experience: "3 years",
     about:
@@ -270,8 +283,9 @@ export const doctors = [
   },
   {
     _id: "doc14 ",
+    image:doc14,
     name: "Dr.Sarah Patel",
-    spaciality: "Germatologist",
+    speciality: "Germatologist",
     degree: "MBBS",
     experience: "1 years",
     about:
@@ -284,8 +298,9 @@ export const doctors = [
   },
   {
     _id: "doc15 ",
+    image:doc15,
     name: "Dr.Richard James",
-    spaciality: "General_physician",
+    speciality: "General_physician",
     degree: "MBBS",
     experience: "4 years",
     about:

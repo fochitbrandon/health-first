@@ -4,8 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#5f6FFF",
+        primary: "red",
       },
+      gridTemplateColumns:{
+        'auto':'repeat(auto-full , minmax(200px, 1fr)'
+      }
     },
   },
   plugins: [],
