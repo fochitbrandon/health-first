@@ -7,7 +7,7 @@ export default {
         primary: "red",
       },
       gridTemplateColumns:{
-        'auto':'repeat(auto-full , minmax(200px, 1fr)'
+        'auto':'repeat(auto-fill , minmax(200px, 1fr))'
       }
     },
   },
