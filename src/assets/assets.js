@@ -1,6 +1,6 @@
 import React from "react";
 import appointment_img from "./appointment_img.png";
-import header_img from "./header_img.png";
+import header_img from "./header_img.jpg";
 import group_profiles from "./group_profiles.png";
 import profile_pic from "./profile_pic.png";
 import Contact_image from "./contact_image.png";
@@ -87,8 +87,8 @@ export const specialityData = [
 
 export const doctors = [
   {
-    _id: "doc1  ",
-    image:doc1,
+    _id: "doc1",
+    image: doc1,
     name: "Dr.Richard James",
     speciality: "General_physician",
     degree: "MBBS",
@@ -102,14 +102,14 @@ export const doctors = [
     },
   },
   {
-    _id: "doc2  ",
-    image:doc2,
+    _id: "doc2",
+    image: doc2,
     name: "Dr.Emily Larson",
     speciality: "Gynecologist",
     degree: "MBBS",
     experience: "3 years",
     about:
-      "Dr.Richard James has a strong commitment to deliving comprehensive medical care",
+      "Dr.Emily Larson has a strong commitment to deliving comprehensive medical care",
     fees: 60,
     address: {
       line1: "37th cross , Richmond",
@@ -118,8 +118,8 @@ export const doctors = [
   },
   {
     _id: "doc3",
-    image:doc3,
-    name: "Dr.Sarah Patel",
+    image: doc3,
+    name: "Dr.Richard James",
     speciality: "Germatologist",
     degree: "MBBS",
     experience: "1 years",
@@ -133,13 +133,13 @@ export const doctors = [
   },
   {
     _id: "doc4  ",
-    image:doc4,
-    name: "Dr.Richard James",
+    image: doc4,
+    name: "Dr.Fochit Brandon",
     speciality: "General_physician",
     degree: "MBBS",
     experience: "4 years",
     about:
-      "Dr.Richard James has a strong commitment to deliving comprehensive medical care",
+      "Dr.Fochit Brandon has a strong commitment to deliving comprehensive medical care",
     fees: 50,
     address: {
       line1: "17th cross , Richmond",
@@ -148,13 +148,13 @@ export const doctors = [
   },
   {
     _id: "doc5  ",
-    image:doc5,
-    name: "Dr.Richard James",
+    image: doc5,
+    name: "Dr.Rachel Loren",
     speciality: "General_physician",
     degree: "MBBS",
     experience: "4 years",
     about:
-      "Dr.Richard James has a strong commitment to deliving comprehensive medical care",
+      "Dr.Rachel Loren has a strong commitment to deliving comprehensive medical care",
     fees: 50,
     address: {
       line1: "17th cross , Richmond",
@@ -163,13 +163,13 @@ export const doctors = [
   },
   {
     _id: "doc6  ",
-    image:doc6,
-    name: "Dr.Emily Larson",
+    image: doc6,
+    name: "Dr.Atanga Vanesa",
     speciality: "Gynecologist",
     degree: "MBBS",
     experience: "3 years",
     about:
-      "Dr.Richard James has a strong commitment to deliving comprehensive medical care",
+      "Dr.Atanga Vanesa has a strong commitment to deliving comprehensive medical care",
     fees: 60,
     address: {
       line1: "37th cross , Richmond",
@@ -178,13 +178,13 @@ export const doctors = [
   },
   {
     _id: "doc7  ",
-    image:doc7,
-    name: "Dr.Sarah Patel",
+    image: doc7,
+    name: "Dr.Atango Brain",
     speciality: "Germatologist",
     degree: "MBBS",
     experience: "1 years",
     about:
-      "Dr.Richard James has a strong commitment to deliving comprehensive medical care",
+      "Atango Brain has a strong commitment to deliving comprehensive medical care",
     fees: 30,
     address: {
       line1: "20th cross , Richmond",
@@ -193,13 +193,13 @@ export const doctors = [
   },
   {
     _id: "doc8  ",
-    image:doc8,
-    name: "Dr.Richard James",
+    image: doc8,
+    name: "Dr.Teacher Thomas",
     speciality: "General_physician",
     degree: "MBBS",
     experience: "4 years",
     about:
-      "Dr.Richard James has a strong commitment to deliving comprehensive medical care",
+      "Dr.Teacher Thomas has a strong commitment to deliving comprehensive medical care",
     fees: 50,
     address: {
       line1: "17th cross , Richmond",
@@ -208,13 +208,13 @@ export const doctors = [
   },
   {
     _id: "doc9  ",
-    image:doc9,
-    name: "Dr.Richard James",
+    image: doc9,
+    name: "Dr.Sarah Patel",
     speciality: "General_physician",
     degree: "MBBS",
     experience: "4 years",
     about:
-      "Dr.Richard James has a strong commitment to deliving comprehensive medical care",
+      "Dr.Sarah Patel has a strong commitment to deliving comprehensive medical care",
     fees: 50,
     address: {
       line1: "17th cross , Richmond",
@@ -223,13 +223,13 @@ export const doctors = [
   },
   {
     _id: "doc10 ",
-    image:doc10,
-    name: "Dr.Emily Larson",
+    image: doc10,
+    name: "Dr. Emmanuel Michel",
     speciality: "Gynecologist",
     degree: "MBBS",
     experience: "3 years",
     about:
-      "Dr.Richard James has a strong commitment to deliving comprehensive medical care",
+      "Dr. Emmanuel Michel has a strong commitment to deliving comprehensive medical care",
     fees: 60,
     address: {
       line1: "37th cross , Richmond",
@@ -238,13 +238,13 @@ export const doctors = [
   },
   {
     _id: "doc11 ",
-    image:doc11,
-    name: "Dr.Sarah Patel",
+    image: doc11,
+    name: "Dr.Merry Lusi",
     speciality: "Germatologist",
     degree: "MBBS",
     experience: "1 years",
     about:
-      "Dr.Richard James has a strong commitment to deliving comprehensive medical care",
+      "Dr.Merry Lusi has a strong commitment to deliving comprehensive medical care",
     fees: 30,
     address: {
       line1: "20th cross , Richmond",
@@ -253,13 +253,13 @@ export const doctors = [
   },
   {
     _id: "doc12 ",
-    image:doc12,
-    name: "Dr.Richard James",
+    image: doc12,
+    name: "Dr.Tatah Jiuce",
     speciality: "General_physician",
     degree: "MBBS",
     experience: "4 years",
     about:
-      "Dr.Richard James has a strong commitment to deliving comprehensive medical care",
+      "Dr.Tatah Jiuce has a strong commitment to deliving comprehensive medical care",
     fees: 50,
     address: {
       line1: "17th cross , Richmond",
@@ -268,13 +268,13 @@ export const doctors = [
   },
   {
     _id: "doc13 ",
-    image:doc13,
-    name: "Dr.Emily Larson",
+    image: doc13,
+    name: "Dr.Cynthia Blessing ",
     speciality: "Gynecologist",
     degree: "MBBS",
     experience: "3 years",
     about:
-      "Dr.Richard James has a strong commitment to deliving comprehensive medical care",
+      "Dr.Cynthia Blessing has a strong commitment to deliving comprehensive medical care",
     fees: 60,
     address: {
       line1: "37th cross , Richmond",
@@ -283,13 +283,13 @@ export const doctors = [
   },
   {
     _id: "doc14 ",
-    image:doc14,
-    name: "Dr.Sarah Patel",
+    image: doc14,
+    name: "Dr.Willfred Tah ",
     speciality: "Germatologist",
     degree: "MBBS",
     experience: "1 years",
     about:
-      "Dr.Richard James has a strong commitment to deliving comprehensive medical care",
+      "Dr.Willfred Tah has a strong commitment to deliving comprehensive medical care",
     fees: 30,
     address: {
       line1: "20th cross , Richmond",
@@ -298,13 +298,13 @@ export const doctors = [
   },
   {
     _id: "doc15 ",
-    image:doc15,
-    name: "Dr.Richard James",
+    image: doc15,
+    name: "Dr.Shantal Joice",
     speciality: "General_physician",
     degree: "MBBS",
     experience: "4 years",
     about:
-      "Dr.Richard James has a strong commitment to deliving comprehensive medical care",
+      "Dr.Shantal Joice has a strong commitment to deliving comprehensive medical care",
     fees: 50,
     address: {
       line1: "17th cross , Richmond",
