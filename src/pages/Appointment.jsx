@@ -22,10 +22,10 @@ const Appointment = () => {
 
   //getting curent date
   let today = new Date();
-  for (i = 0; i < 7; i++) {
-    //gting date with index
+  for (let i = 0; i < 7; i++) {
+    //geting date with index
     let currentDate = new Date(today);
-    currentDate.set(today.getDate() + i);
+    currentDate.setDate(today.getDate() + i);
 
     // setting end time of the daywith index
     let endTime = new Date();
