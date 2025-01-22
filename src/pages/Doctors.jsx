@@ -5,7 +5,7 @@ const Doctors = () => {
   const { speciality } = useParams();
   const [filterDoc, setFilterDoc] = useState([]);
   const navigate = useNavigate();
-  const { doctors } = useContext(AppContext) ;
+  const { doctors } = useContext(AppContext);
 
   {
     AppContext;
@@ -23,7 +23,7 @@ const Doctors = () => {
 
   return (
     <div>
-      <p className="text- gray-600 ">Browse through the doctors specialist.</p>
+      <p className="text-gray-600 ">Browse through the doctors specialist.</p>
       <div className=" flex flex-col sm:flex-row  items-start gap-5 mt-5 ">
         <div className="flex flex-col text-gray-600  gap-4 text-sm">
           <p

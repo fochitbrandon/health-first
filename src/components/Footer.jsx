@@ -10,7 +10,8 @@ const Footer = () => {
           <p className="  w-full md:w-2/3 text-gray-600 leading-6  ">
             Your well-being is our priority . Book appointments effortlessly and
             take the first step towards a healthier life . Experience qualiy
-            care at your convenience, because your health matters most.currencySymbol
+            care at your convenience, because your health matters
+            most.currencySymbol
           </p>
         </div>
         {/* centertside  */}
@@ -36,7 +37,7 @@ const Footer = () => {
       <div>
         <hr />
         <p className="py-5 text-sm text-center">
-          copyright 2024@Health-Frist - All right Reword
+          copyright 2024@Health-Frist - All right Reserved
         </p>
       </div>
     </div>
