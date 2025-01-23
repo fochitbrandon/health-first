@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../context/AppContext";
 import { useParams } from "react-router-dom";
-import { assets } from "../assets/assets";
-import RelatedDoctors from "../context/RelatedDoctors";
+import { assets ,doctors } from "../assets/assets";
+import RelatedDoctors from "../components/RelatedDoctors";
 
 const Appointment = () => {
   const { docId } = useParams();
+  console.log("Params here:",docId)
   const { doctors, currencySymbol } = useContext(AppContext);
   const daysOfWeek = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
   const [docInfo, setDocInfo] = useState(null);
@@ -14,7 +15,7 @@ const Appointment = () => {
   const [slotTime, setSlotTime] = useState("");
 
   const fetchDocInfo = async () => {
-    const docInfo = doctors.find((doc) => doc._id === docId);
+    const docInfo = doctors.find(doc._id === docId);
     setDocInfo(docInfo);
   };
   const getAvailableSlots = async () => {
@@ -26,27 +27,27 @@ const Appointment = () => {
 
   //getting curent date
   let today = new Date();
-  for (let i = 0; i < 7; i++) {
-    //geting date with index
-    let currentDate = new Date(today);
-    currentDate.setDate(today.getDate() + i);
+  // for (let i = 0; i < 7; i++) {
+  //   //geting date with index
+  //   let currentDate = new Date(today);
+  //   currentDate.setDate(today.getDate() + i);
 
-    // setting end time of the daywith index
-    let endTime = new Date();
-    endTime.setDate(today.getDate() + 1);
-    endTime.setHours(21, 0, 0, 0);
+  //   // setting end time of the daywith index
+  //   let endTime = new Date();
+  //   endTime.setDate(today.getDate() + 1);
+  //   endTime.setHours(21, 0, 0, 0);
 
-    // settinfg hours
-    if (today.getDate() === currentDate.getDate()) {
-      currentDate.setHours(
-        currentDate.getHours() > 10 ? currentDate.getHours() + 1 : 10
-      );
-      currentDate.setMinutes(currentDate.getMinutes() > 30 ? 30 : 0);
-    } else {
-      currentDate.setHours(10);
-      currentDate.setMinutes(0);
-    }
-    let timeSlots = [];
+  //   // settinfg hours
+  //   if (today.getDate() === currentDate.getDate()) {
+  //     currentDate.setHours(
+  //       currentDate.getHours() > 10 ? currentDate.getHours() + 1 : 10
+  //     );
+  //     currentDate.setMinutes(currentDate.getMinutes() > 30 ? 30 : 0);
+  //   } else {
+  //     currentDate.setHours(10);
+  //     currentDate.setMinutes(0);
+  //   }
+  //   let timeSlots = [];
 
     while (currentDate < endTime) {
       let formattedTime = currentDate.toLocaleTimeString([], {
@@ -62,21 +63,22 @@ const Appointment = () => {
       currentDate.setMinutes(currentDate.getMinutes() + 30);
     }
     setDocSlots((prev) => [...prev, timeSlots]);
+  };
 
-    useEffect(() => {
-      fetchDocInfo();
-    }, [doctors, docId]);
+  useEffect(() => {
+    fetchDocInfo();
+  }, [doctors, docId]);
 
-    useEffect(() => {
-      getAvailableSlots();
-    }, [docInfo]);
+  useEffect(() => {
+    getAvailableSlots();
+  }, [docInfo]);
 
-    useEffect(() => {
-      console, log(docSlots);
-    }, []);
-  }
+  useEffect(() => {
+    console, log(docSlots);
+  }, []);
 
   return (
+    
     docInfo && (
       <div>
         {/* Doctor deails */}
@@ -150,8 +152,12 @@ const Appointment = () => {
 
       </div>
     )
+
+    // <div>
+    //   some content{JSON.stringify(docInfo)}
+    // </div>
   );
-};
+}
 
 
 export default Appointment;
