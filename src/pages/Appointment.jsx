@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AppContext } from "../context/AppContext";
 import { useParams } from "react-router-dom";
 import { assets } from "../assets/assets";
+import RelatedDoctors from "../context/RelatedDoctors";
 
 const Appointment = () => {
   const { docId } = useParams();
@@ -123,18 +124,30 @@ const Appointment = () => {
         {/* booking slots */}
         <div className=" sm:ml-72 sm:pl-4 font-medium text-gray-700 ">
             <p> Booking slots</p>
-            <div>
+            <div className=" flex  gap-3 items-center w-full overflow-x-scroll mt-4 ">
               {
                 docSlots.length && docSlots.map ((item, index)=>(
-                 <div key={index}>
+                 <div onClick={ ()=>setSlotIndex(index) } className={` text-center py-6 min-w-16 rounded-full cursor-pointer ${slotIndex === index ?'bg-primary text-white ' :'border border-gray-200'}   `} key={index}>
                   <P>{item[0] && daysOfWeek[item[0].datetime.getDate()]} </P>
+                  <p>{item[0] && item[0].datetime.getDate()}</p>
 
                  </div>
                 ))
               }
             </div>
+            <div className="flex item-center gap-3 w-full overflow-x-scroll mt-4">
+              {docSlots.length && docSlots[slotIndex].map ((item, index)=>(
+                <p onClick={()=>setSlotTime(item.time)} className={`text-sm font-lingt flex-shrink-0 py-2 rounded-full cursor-pointer ${item.time === slotTime ? 'bg-primary text-white' : 'text-gray-400 border border-gray-300'}`} key={index}>
+                  {item.time.toLowerCase()}
 
+                </p>
+              )) }
+            </div>
+            <button className=" bg-primary text-white text-sm font-lignt px-14 py-3 rounded-full my-6 "> Book an appointment </button>
         </div>
+        {/* listing Related doctors */}
+        <RelatedDoctors docId= {docId} speciality={docInfo.speciality}/>
+
       </div>
     )
   );
