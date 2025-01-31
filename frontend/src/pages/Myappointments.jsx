@@ -3,7 +3,6 @@ import React, { useContext } from 'react'
 
 import { AppContext } from '../context/AppContext';
 
-const Myappointments = () => {
 const Myappointments = () => {    
 const {doctors} = useContext(AppContext)
 
@@ -55,4 +54,4 @@ const {doctors} = useContext(AppContext)
   );
 }
 
-export default Myappointments;
+export default Myappointments
