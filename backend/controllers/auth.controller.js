@@ -20,6 +20,7 @@ export const signup = async (req, res) => {
       name,
       email,
       password: hashedPassword,
+      phone:658067565
     });
 
     await user.save();
@@ -42,6 +43,7 @@ export const signup = async (req, res) => {
       },
     });
   } catch (error) {
+    console.log("error server", error)
     res.status(500).json({ message: 'Something went wrong' });
   }
 };
