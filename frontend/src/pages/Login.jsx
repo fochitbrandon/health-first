@@ -1,12 +1,17 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
+import { useAuth } from "../context/AuthContext"; 
+import { login, signup } from "../../utils/auth";
+
 const Login = () => {
-  const [state , setState] = useState("Sign Up")
-  const [email, setEmail] = useState(" ");
+  const [state, setState] = useState("Sign Up");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [tel , setTel] = useState()
- 
+  const [tel, setTel] = useState("");
+  const [error, setError] = useState(""); 
+  const { login: authLogin } = useAuth();
+  const navigate = useNavigate();
 
   const handleTelChange = (e) => {
     const value = e.target.value;
@@ -14,25 +19,60 @@ const Login = () => {
       setTel(value);
     }
   };
+
   const onSubmitHandler = async (event) => {
-  
-  }
+    event.preventDefault();
+    setError("");
+
+    try {
+      if (state === "Login") {
+        // Handle login
+        const credentials = { email, password };
+        const { token, user } = await login(credentials);
+        authLogin(user);
+
+       
+        if (user.role === "doctor") {
+          navigate("/dashboard"); 
+        } else {
+          navigate("/dashboard");
+        }
+      } else {
+       
+        const userData = { name, email, password, tel };
+        const { token, user } = await signup(userData);
+        authLogin(user);
+
+       
+        if (user.role === "doctor") {
+          navigate("/dashboard");
+        } else {
+          navigate("/dashboard");
+        }
+      }
+    } catch (error) {
+      setError(error.message || "An error occurred. Please try again.");
+    }
+  };
+
   return (
-    <form className="min-h-[80vh] flex items-center ">
-      <div className="flex flex-col gap-3 m-auto items-start p-8 min-w-[340px] sm:min-w96 border rounded-xl text-zinc-600 text-sm shadow-lg  ">
+    <form onSubmit={onSubmitHandler} className="min-h-[80vh] flex items-center">
+      <div className="flex flex-col gap-3 m-auto items-start p-8 min-w-[340px] sm:min-w-96 border rounded-xl text-zinc-600 text-sm shadow-lg">
         <p className="text-2xl font-semibold">
           {state === "Sign Up" ? "Create Account" : "Login"}
         </p>
 
+        {error && <p className="text-red-500">{error}</p>}
+
         <p>
-          Please {state === "Sign Up" ? "Sign Up" : "Log in"} to book
-          appointment
+          Please {state === "Sign Up" ? "Sign Up" : "Log in"} to book appointment
         </p>
+
         {state === "Sign Up" && (
           <div className="w-full">
             <p>Full Name</p>
             <input
-              className="border  border-zinc-300 rounded w-full p-2 mt-1 "
+              className="border border-zinc-300 rounded w-full p-2 mt-1"
               type="text"
               onChange={(e) => setName(e.target.value)}
               value={name}
@@ -44,7 +84,7 @@ const Login = () => {
         <div className="w-full">
           <p>Email</p>
           <input
-            className="border  border-zinc-300 rounded w-full p-2 mt-1 "
+            className="border border-zinc-300 rounded w-full p-2 mt-1"
             type="email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
@@ -55,7 +95,7 @@ const Login = () => {
         <div className="w-full">
           <p>Password</p>
           <input
-            className="border  border-zinc-300 rounded w-full p-2 mt-1 "
+            className="border border-zinc-300 rounded w-full p-2 mt-1"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
@@ -76,13 +116,16 @@ const Login = () => {
           </div>
         )}
 
-        <button className="bg-primary text-white w-full py-2 rounded-md text-base  ">
-          {state === "Sign Up " ? "Create Account" : "Login"}
+        <button
+          type="submit"
+          className="bg-primary text-white w-full py-2 rounded-md text-base"
+        >
+          {state === "Sign Up" ? "Create Account" : "Login"}
         </button>
+
         {state === "Sign Up" ? (
           <p>
-            {" "}
-            Already have an account ?{" "}
+            Already have an account?{" "}
             <span
               onClick={() => setState("Login")}
               className="text-primary underline cursor-pointer"
@@ -92,19 +135,18 @@ const Login = () => {
           </p>
         ) : (
           <p>
-            Create a new account ?
+            Create a new account?{" "}
             <span
               onClick={() => setState("Sign Up")}
-              className="text-primary  underline cursor-pointer "
+              className="text-primary underline cursor-pointer"
             >
-              click here{" "}
+              Click here
             </span>
           </p>
         )}
       </div>
     </form>
   );
-}
+};
 
 export default Login;
- 
