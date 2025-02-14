@@ -28,10 +28,10 @@ import { useNavigate } from 'react-router-dom'
               navigate(`/appointment/${item._id}`);
               scrollTo(0, 0);
             }}
-            className=" border border-red-200 rounded-xl overflow-hidden cursor-pointer flex-shrink-0 hover:translate-y-[-10px] transition-all duration-500"
+            className=" border border-blue-200 rounded-xl overflow-hidden cursor-pointer flex-shrink-0 hover:translate-y-[-10px] transition-all duration-500"
             key={index}
           >
-            <img className="bg-red-50 " src={item.image} alt="" />
+            <img className="bg-blue-50 " src={item.image} alt="" />
             <div className="p-4">
               <div className="flex items-center gap-2 text-sm text-center text-green-500 ">
                 <p className="w-2 h-2 bg-green-500 rounded-full "></p>

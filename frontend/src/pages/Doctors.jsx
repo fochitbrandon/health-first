@@ -48,7 +48,7 @@ const Doctors = () => {
                 : navigate("/doctors/Gynecologist")
             }
             className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              speciality === "Gynecologist" ? "bg-red-100 text-black" : ""
+              speciality === "Gynecologist" ? "bg-blue-100 text-black" : ""
             }`}
           >
             Gynecologist
@@ -60,7 +60,7 @@ const Doctors = () => {
                 : navigate("/doctors/General_physician")
             }
             className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              speciality === "General_physician" ? " bg-red-100 text-black" : ""
+              speciality === "General_physician" ? " bg-blue-100 text-black" : ""
             }`}
           >
             General physician
@@ -72,7 +72,7 @@ const Doctors = () => {
                 : navigate("/doctors/Dermatologist")
             }
             className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              speciality === "Dermatologist" ? " bg-red-100 text-black" : ""
+              speciality === "Dermatologist" ? " bg-blue-100 text-black" : ""
             }`}
           >
             Dermatologist
@@ -84,7 +84,7 @@ const Doctors = () => {
                 : navigate("/doctors/Pediatricians")
             }
             className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              speciality === "Pediatricians" ? "bg-red-100 text-black" : ""
+              speciality === "Pediatricians" ? "bg-blue-100 text-black" : ""
             }`}
           >
             Pediatricians
@@ -96,7 +96,7 @@ const Doctors = () => {
                 : navigate("/doctors/Neurologist")
             }
             className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              speciality === "Neurologist" ? "bg-red-100 text-black" : ""
+              speciality === "Neurologist" ? "bg-blue-100 text-black" : ""
             }`}
           >
             Neurologist
@@ -108,7 +108,7 @@ const Doctors = () => {
                 : navigate("/doctors/Gastroenterologist")
             }
             className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              speciality === "Gastroenterologist" ? "bg-red-100 text-black" : ""
+              speciality === "Gastroenterologist" ? "bg-blue-100 text-black" : ""
             }`}
           >
             Gastroenterologist
@@ -119,10 +119,10 @@ const Doctors = () => {
           {filterDoc.slice(0, 10).map((item, index) => (
             <div
               onClick={() => navigate(`/appointment/${item._id}`)}
-              className=" border border-red-200 rounded-xl overflow-hidden cursor-pointer flex-shrink-0 hover:translate-y-[-10px] transition-all duration-500"
+              className=" border border-blue-200 rounded-xl overflow-hidden cursor-pointer flex-shrink-0 hover:translate-y-[-10px] transition-all duration-500"
               key={index}
             >
-              <img className="bg-red-50 " src={item.image} alt="" />
+              <img className="bg-blue-50 " src={item.image} alt="" />
               <div className="p-4">
                 <div className="flex items-center gap-2 text-sm text-center text-green-500 ">
                   <p className="w-2 h-2 bg-green-500 rounded-full "></p>

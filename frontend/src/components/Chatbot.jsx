@@ -2,51 +2,53 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 const Chatbot = () => {
-  const [messages, setMessages] = useState([]); 
-  const [input, setInput] = useState(""); 
-  const [loading, setLoading] = useState(false); 
-  const [isOpen, setIsOpen] = useState(false); 
+  const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const chatContainerRef = useRef(null);
 
-  
   const sendMessage = async () => {
-    if (!input.trim()) return; 
+    if (!input.trim()) return;
 
-  
     const userMessage = { role: "user", content: input };
     setMessages((prev) => [...prev, userMessage]);
-    setInput(""); 
+    setInput("");
     setLoading(true);
 
     try {
-      
-      const response = await axios.post("https://health-first-taxf.onrender.com/api/groq", {
-        messages: [userMessage], 
-      });
+      const response = await axios.post(
+        "https://health-first-taxf.onrender.com/api/groq",
+        {
+          messages: [userMessage],
+        }
+      );
 
-   
       const aiMessage = { role: "assistant", content: response.data };
       setMessages((prev) => [...prev, aiMessage]);
     } catch (error) {
       console.error("Error fetching AI response:", error);
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: "Sorry, I couldn't process your request. Please try again." },
+        {
+          role: "assistant",
+          content: "Sorry, I couldn't process your request. Please try again.",
+        },
       ]);
     } finally {
       setLoading(false);
     }
   };
 
-  
   useEffect(() => {
     if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight;
     }
   }, [messages]);
 
   return (
-    <div className="fixed bottom-8 right-8">
+    <div className="fixed bottom-8 right-8 z-50">
       {/* Chat Icon */}
       <div
         onClick={() => setIsOpen(!isOpen)}
@@ -68,10 +70,8 @@ const Chatbot = () => {
         </svg>
       </div>
 
-     
       {isOpen && (
         <div className="w-80 bg-white rounded-lg shadow-lg border border-gray-200 mt-4">
-     
           <div className="bg-primary text-white p-4 rounded-t-lg flex justify-between items-center">
             <h2 className="text-lg font-semibold">AI Chatbot</h2>
             <button
@@ -93,7 +93,6 @@ const Chatbot = () => {
             </button>
           </div>
 
-    
           <div
             ref={chatContainerRef}
             className="p-4 h-64 overflow-y-auto scroll-smooth"

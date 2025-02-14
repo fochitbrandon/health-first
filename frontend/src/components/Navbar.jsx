@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { assets } from "../assets/assets";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import Chatbot from "../components/Chatbot";
+
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -21,6 +23,8 @@ const Navbar = () => {
         src={assets.logo}
         alt=""
       />
+      {/* chatbot */}
+      <Chatbot/>
       <ul className="hidden md:flex items-start gap-5 font-medium">
         <NavLink to="/">
           <li className="py-1">HOME</li>
@@ -79,6 +83,8 @@ const Navbar = () => {
             Create Account
           </button>
         )}
+        
+
         <img
           className="w-6 md:hidden"
           src={assets.menu_icon}
@@ -86,9 +92,8 @@ const Navbar = () => {
           onClick={() => setShowMenu(true)}
         />
         {showMenu && (
-          <div className="md:hidden fixed w-full right-0 top-0 bottom-0 z-20 overflow-hidden bg-white transition-all">
+          <div className="md:hidden fixed w-30  right-0 top-0 bottom-0 z-20 h-fit bg-white transition-all">
             <div className="flex items-center justify-between px-5 py-6">
-              <img src={assets.logo} className="w-36" alt="" />
               <img
                 src={assets.cross_icon}
                 className="w-7"

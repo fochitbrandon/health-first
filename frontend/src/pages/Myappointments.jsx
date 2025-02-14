@@ -38,11 +38,11 @@ const {doctors} = useContext(AppContext)
 
             </div>
             <div className="flex flex-col justify-end gap-2">
-              <button className="text-sm text-stone-500 text-center sm:min-w-48 py-2 border hover:bg-blue-700 hover:text-white transition-all duration-300  rounded-full">
+              <button className="text-sm text-stone-500 text-center sm:min-w-48 py-2 border hover:bg-primary hover:text-white transition-all duration-300  rounded-full">
                 {" "}
                 Pay online{" "}
               </button>
-              <button className="text-sm text-stone-500 text-center sm:min-w-48 py-2 border   hover:bg-primary hover:text-white transition-all duration-300 rounded-full">
+              <button className="text-sm text-stone-500 text-center sm:min-w-48 py-2 border   hover:bg-red-500 hover:text-white transition-all duration-300 rounded-full">
                 {" "}
                 cancel appointment
               </button>
